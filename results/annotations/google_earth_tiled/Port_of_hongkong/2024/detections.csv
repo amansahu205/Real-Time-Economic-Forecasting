@@ -1,0 +1,3 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_storage-tank,count_harbor,count_small-vehicle,count_large-vehicle
+2024-1.jpg,2025-11-30T21:36:43.068290,51,google_earth_tiled\Port_of_hongkong\2024\annotated\2024-1_annotated.jpg,33,8,5,2,3
+2024-2.jpg,2025-11-30T21:36:45.733879,64,google_earth_tiled\Port_of_hongkong\2024\annotated\2024-2_annotated.jpg,47,7,7,1,2

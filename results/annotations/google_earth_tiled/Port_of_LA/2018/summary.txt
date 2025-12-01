@@ -1,0 +1,16 @@
+Detection Summary - Port_of_LA/2018
+============================================================
+
+Total Images: 3
+Total Detections: 230
+Average Detections per Image: 76.67
+
+Detections by Class:
+----------------------------------------
+  ship                :   112
+  storage-tank        :    59
+  harbor              :    58
+  large-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:34:14

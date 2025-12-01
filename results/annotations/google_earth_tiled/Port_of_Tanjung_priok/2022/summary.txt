@@ -1,0 +1,15 @@
+Detection Summary - Port_of_Tanjung_priok/2022
+============================================================
+
+Total Images: 2
+Total Detections: 83
+Average Detections per Image: 41.50
+
+Detections by Class:
+----------------------------------------
+  ship                :    62
+  harbor              :    18
+  storage-tank        :     3
+
+============================================================
+Last Updated: 2025-11-30 21:37:43

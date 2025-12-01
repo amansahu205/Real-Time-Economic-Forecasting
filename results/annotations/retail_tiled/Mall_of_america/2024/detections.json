@@ -1,0 +1,38 @@
+[
+  {
+    "image_name": "2024-2.jpg",
+    "annotated_path": "retail_tiled\\Mall_of_america\\2024\\annotated\\2024-2_annotated.jpg",
+    "timestamp": "2025-11-30T22:00:32.226556",
+    "total_detections": 92,
+    "class_counts": {
+      "car": 92
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "retail_yolo11",
+      "location_type": "retail_mall"
+    }
+  },
+  {
+    "image_name": "2024-3.jpg",
+    "annotated_path": "retail_tiled\\Mall_of_america\\2024\\annotated\\2024-3_annotated.jpg",
+    "timestamp": "2025-11-30T22:00:36.784957",
+    "total_detections": 86,
+    "class_counts": {
+      "car": 86
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "retail_yolo11",
+      "location_type": "retail_mall"
+    }
+  }
+]

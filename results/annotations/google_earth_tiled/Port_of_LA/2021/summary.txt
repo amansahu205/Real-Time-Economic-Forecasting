@@ -1,0 +1,15 @@
+Detection Summary - Port_of_LA/2021
+============================================================
+
+Total Images: 4
+Total Detections: 337
+Average Detections per Image: 84.25
+
+Detections by Class:
+----------------------------------------
+  ship                :   187
+  harbor              :    76
+  storage-tank        :    74
+
+============================================================
+Last Updated: 2025-11-30 21:34:44

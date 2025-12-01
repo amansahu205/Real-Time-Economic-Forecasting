@@ -1,0 +1,13 @@
+Detection Summary - Port_of_LA/2023
+============================================================
+
+Total Images: 7
+Total Detections: 95
+Average Detections per Image: 13.57
+
+Detections by Class:
+----------------------------------------
+  ship                :    95
+
+============================================================
+Last Updated: 2025-11-30 21:17:41

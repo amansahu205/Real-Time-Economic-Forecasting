@@ -1,0 +1,9 @@
+{
+  "total_images": 342,
+  "processed_images": 342,
+  "total_detections": 17840,
+  "avg_detections_per_image": 52.16374269005848,
+  "total_valid_tiles": 39194,
+  "total_skipped_tiles": 10054,
+  "timestamp": "2025-11-29T22:20:41.652890"
+}

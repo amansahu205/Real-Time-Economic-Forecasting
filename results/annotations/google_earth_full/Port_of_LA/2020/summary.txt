@@ -1,0 +1,14 @@
+Detection Summary - Port_of_LA/2020
+============================================================
+
+Total Images: 6
+Total Detections: 67
+Average Detections per Image: 11.17
+
+Detections by Class:
+----------------------------------------
+  ship                :    66
+  harbor              :     1
+
+============================================================
+Last Updated: 2025-11-30 21:34:34

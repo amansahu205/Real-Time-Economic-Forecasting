@@ -1,0 +1,46 @@
+[
+  {
+    "image_name": "2018-1.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2018\\annotated\\2018-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:09.542288",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 5,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2018\\annotated\\2018-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:11.694884",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 6
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-3.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2018\\annotated\\2018-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:13.922357",
+    "total_detections": 2,
+    "class_counts": {
+      "ship": 1,
+      "small-vehicle": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

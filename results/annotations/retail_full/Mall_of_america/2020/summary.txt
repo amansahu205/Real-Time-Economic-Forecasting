@@ -1,0 +1,13 @@
+Detection Summary - Mall_of_america/2020
+============================================================
+
+Total Images: 6
+Total Detections: 56
+Average Detections per Image: 9.33
+
+Detections by Class:
+----------------------------------------
+  car                 :    56
+
+============================================================
+Last Updated: 2025-11-30 22:00:07

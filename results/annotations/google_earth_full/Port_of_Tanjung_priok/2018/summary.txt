@@ -1,0 +1,13 @@
+Detection Summary - Port_of_Tanjung_priok/2018
+============================================================
+
+Total Images: 2
+Total Detections: 18
+Average Detections per Image: 9.00
+
+Detections by Class:
+----------------------------------------
+  ship                :    18
+
+============================================================
+Last Updated: 2025-11-30 21:37:00

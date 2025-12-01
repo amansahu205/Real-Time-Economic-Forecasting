@@ -1,0 +1,16 @@
+Detection Summary - Port_of_hongkong/2023
+============================================================
+
+Total Images: 1
+Total Detections: 71
+Average Detections per Image: 71.00
+
+Detections by Class:
+----------------------------------------
+  ship                :    54
+  harbor              :    12
+  storage-tank        :     4
+  large-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:36:40

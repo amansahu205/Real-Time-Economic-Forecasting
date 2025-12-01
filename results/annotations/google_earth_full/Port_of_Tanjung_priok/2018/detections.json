@@ -1,0 +1,30 @@
+[
+  {
+    "image_name": "2018-1.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2018\\annotated\\2018-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:36:58.416620",
+    "total_detections": 9,
+    "class_counts": {
+      "ship": 9
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2018\\annotated\\2018-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:00.511130",
+    "total_detections": 9,
+    "class_counts": {
+      "ship": 9
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

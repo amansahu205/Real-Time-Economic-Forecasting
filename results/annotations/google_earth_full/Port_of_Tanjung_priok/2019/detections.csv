@@ -1,0 +1,8 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_harbor
+2019-1.jpg,2025-11-30T21:37:02.632225,0,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-1_annotated.jpg,,
+2019-2.jpg,2025-11-30T21:37:04.957874,15,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-2_annotated.jpg,15.0,
+2019-3.jpg,2025-11-30T21:37:07.264972,4,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-3_annotated.jpg,3.0,1.0
+2019-4.jpg,2025-11-30T21:37:09.580205,0,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-4_annotated.jpg,,
+2019-5.jpg,2025-11-30T21:37:12.188662,0,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-5_annotated.jpg,,
+2019-6.jpg,2025-11-30T21:37:14.717719,0,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-6_annotated.jpg,,
+2019-7.jpg,2025-11-30T21:37:17.037649,10,google_earth_full\Port_of_Tanjung_priok\2019\annotated\2019-7_annotated.jpg,10.0,

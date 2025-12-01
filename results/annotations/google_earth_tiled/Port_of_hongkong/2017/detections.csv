@@ -1,0 +1,6 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_storage-tank,count_large-vehicle,count_harbor,count_small-vehicle
+2017-1.jpg,2025-11-30T21:35:22.361119,75,google_earth_tiled\Port_of_hongkong\2017\annotated\2017-1_annotated.jpg,56,7,1,11,
+2017-2.jpg,2025-11-30T21:35:25.509121,60,google_earth_tiled\Port_of_hongkong\2017\annotated\2017-2_annotated.jpg,48,4,1,6,1.0
+2017-3.jpg,2025-11-30T21:35:28.776866,69,google_earth_tiled\Port_of_hongkong\2017\annotated\2017-3_annotated.jpg,56,5,3,5,
+2017-4.jpg,2025-11-30T21:35:31.882955,78,google_earth_tiled\Port_of_hongkong\2017\annotated\2017-4_annotated.jpg,59,10,1,8,
+2017-5.jpg,2025-11-30T21:35:35.015617,86,google_earth_tiled\Port_of_hongkong\2017\annotated\2017-5_annotated.jpg,68,7,2,8,1.0

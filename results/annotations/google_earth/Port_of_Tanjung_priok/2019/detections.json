@@ -1,0 +1,114 @@
+[
+  {
+    "image_name": "2019-1.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:06.939113",
+    "total_detections": 0,
+    "class_counts": {},
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-2.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:07.566895",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-3.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:08.028832",
+    "total_detections": 4,
+    "class_counts": {
+      "ship": 3,
+      "harbor": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-3.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-4.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:08.894776",
+    "total_detections": 0,
+    "class_counts": {},
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-4.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-5.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:09.729631",
+    "total_detections": 0,
+    "class_counts": {},
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-5.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-6.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:10.487280",
+    "total_detections": 0,
+    "class_counts": {},
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-6.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-7.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2019\\annotated\\2019-7_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:11.022466",
+    "total_detections": 10,
+    "class_counts": {
+      "ship": 10
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2019\\2019-7.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

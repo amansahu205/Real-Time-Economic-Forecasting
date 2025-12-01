@@ -1,0 +1,75 @@
+[
+  {
+    "image_name": "2018-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2018\\annotated\\2018-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:00.072251",
+    "total_detections": 5,
+    "class_counts": {
+      "harbor": 2,
+      "ship": 3
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-3.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2018\\annotated\\2018-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:02.229603",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 6
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-4.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2018\\annotated\\2018-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:04.340337",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 4,
+      "harbor": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-5.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2018\\annotated\\2018-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:06.577977",
+    "total_detections": 7,
+    "class_counts": {
+      "ship": 7
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-6.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2018\\annotated\\2018-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:08.756430",
+    "total_detections": 5,
+    "class_counts": {
+      "harbor": 2,
+      "ship": 3
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

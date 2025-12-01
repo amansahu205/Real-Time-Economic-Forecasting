@@ -1,0 +1,4 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_harbor
+2021-2.jpg,2025-11-30T21:17:57.698359,22,google_earth\Port_of_hongkong\2021\annotated\2021-2_annotated.jpg,18.0,4.0
+2021-3.jpg,2025-11-30T21:17:58.340419,52,google_earth\Port_of_hongkong\2021\annotated\2021-3_annotated.jpg,48.0,4.0
+2021-6.jpg,2025-11-30T21:17:59.025378,0,google_earth\Port_of_hongkong\2021\annotated\2021-6_annotated.jpg,,

@@ -1,0 +1,5 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_storage-tank,count_harbor,count_large-vehicle
+2017-1.jpg,2025-11-30T21:34:00.079551,81,google_earth_tiled\Port_of_LA\2017\annotated\2017-1_annotated.jpg,42,21,16,2.0
+2017-2.jpg,2025-11-30T21:34:02.689130,81,google_earth_tiled\Port_of_LA\2017\annotated\2017-2_annotated.jpg,43,21,17,
+2017-3.jpg,2025-11-30T21:34:04.962845,75,google_earth_tiled\Port_of_LA\2017\annotated\2017-3_annotated.jpg,41,20,14,
+2017-4.jpg,2025-11-30T21:34:07.407135,69,google_earth_tiled\Port_of_LA\2017\annotated\2017-4_annotated.jpg,29,28,11,1.0

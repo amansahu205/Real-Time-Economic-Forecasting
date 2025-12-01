@@ -1,0 +1,101 @@
+[
+  {
+    "image_name": "2022-1.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2022\\annotated\\2022-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:46.867017",
+    "total_detections": 79,
+    "class_counts": {
+      "storage-tank": 20,
+      "ship": 44,
+      "harbor": 15
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2022\\annotated\\2022-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:49.233249",
+    "total_detections": 84,
+    "class_counts": {
+      "storage-tank": 15,
+      "harbor": 23,
+      "ship": 46
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-3.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2022\\annotated\\2022-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:51.903899",
+    "total_detections": 90,
+    "class_counts": {
+      "storage-tank": 17,
+      "harbor": 24,
+      "ship": 48,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-4.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2022\\annotated\\2022-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:54.723962",
+    "total_detections": 84,
+    "class_counts": {
+      "ship": 44,
+      "storage-tank": 23,
+      "harbor": 12,
+      "large-vehicle": 3,
+      "small-vehicle": 2
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-5.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2022\\annotated\\2022-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:57.245229",
+    "total_detections": 66,
+    "class_counts": {
+      "storage-tank": 24,
+      "ship": 28,
+      "harbor": 12,
+      "large-vehicle": 2
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

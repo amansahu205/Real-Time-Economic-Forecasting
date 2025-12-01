@@ -1,0 +1,60 @@
+[
+  {
+    "image_name": "2021-1.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Tanjung_priok\\2021\\annotated\\2021-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:34.208741",
+    "total_detections": 40,
+    "class_counts": {
+      "ship": 26,
+      "harbor": 12,
+      "large-vehicle": 1,
+      "storage-tank": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2021-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Tanjung_priok\\2021\\annotated\\2021-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:36.530502",
+    "total_detections": 43,
+    "class_counts": {
+      "ship": 32,
+      "harbor": 10,
+      "storage-tank": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2021-3.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Tanjung_priok\\2021\\annotated\\2021-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:38.911687",
+    "total_detections": 50,
+    "class_counts": {
+      "ship": 38,
+      "harbor": 11,
+      "storage-tank": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

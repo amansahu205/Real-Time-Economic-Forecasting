@@ -1,0 +1,36 @@
+[
+  {
+    "image_name": "2024-1.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2024\\annotated\\2024-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:19.804052",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 6
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2024\\2024-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2024-2.jpg",
+    "annotated_path": "google_earth\\Port_of_Tanjung_priok\\2024\\annotated\\2024-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:20.401454",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 5
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Tanjung_priok\\2024\\2024-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

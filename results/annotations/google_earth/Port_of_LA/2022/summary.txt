@@ -1,0 +1,14 @@
+Detection Summary - Port_of_LA/2022
+============================================================
+
+Total Images: 11
+Total Detections: 184
+Average Detections per Image: 16.73
+
+Detections by Class:
+----------------------------------------
+  ship                :   183
+  harbor              :     1
+
+============================================================
+Last Updated: 2025-11-30 21:17:39

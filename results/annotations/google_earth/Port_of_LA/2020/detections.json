@@ -1,0 +1,189 @@
+[
+  {
+    "image_name": "2020 - 1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 1_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:20.583143",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 1.jpg",
+      "migration_date": "2025-11-30T20:17:20.396220"
+    }
+  },
+  {
+    "image_name": "2020 - 2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 2_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:21.182126",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 2.jpg",
+      "migration_date": "2025-11-30T20:17:20.944278"
+    }
+  },
+  {
+    "image_name": "2020 - 3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 3_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:21.784070",
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 17
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 3.jpg",
+      "migration_date": "2025-11-30T20:17:21.558167"
+    }
+  },
+  {
+    "image_name": "2020 - 1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 1_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:32.988058",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 1.jpg",
+      "migration_date": "2025-11-30T20:18:32.788511"
+    }
+  },
+  {
+    "image_name": "2020 - 2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 2_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:33.574807",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 2.jpg",
+      "migration_date": "2025-11-30T20:18:33.334998"
+    }
+  },
+  {
+    "image_name": "2020 - 3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020 - 3_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:34.160174",
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 17
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2020 - 3.jpg",
+      "migration_date": "2025-11-30T20:18:33.925516"
+    }
+  },
+  {
+    "image_name": "2020-1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:31.489742",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:32.142142",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:32.796577",
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 17
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-3.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-4.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:33.318024",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 6
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-4.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-5.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:33.848070",
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 17
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-5.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-6.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2020\\annotated\\2020-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:34.450250",
+    "total_detections": 9,
+    "class_counts": {
+      "ship": 8,
+      "harbor": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2020\\2020-6.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

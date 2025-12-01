@@ -1,0 +1,17 @@
+Detection Summary - Port_of_Salalah/2018
+============================================================
+
+Total Images: 5
+Total Detections: 128
+Average Detections per Image: 25.60
+
+Detections by Class:
+----------------------------------------
+  ship                :    62
+  storage-tank        :    31
+  large-vehicle       :    23
+  harbor              :    11
+  small-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:38:08

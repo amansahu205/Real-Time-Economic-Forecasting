@@ -1,0 +1,7 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_storage-tank,count_harbor,count_small-vehicle,count_large-vehicle
+2020-1.jpg,2025-11-30T21:36:05.876740,69,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-1_annotated.jpg,52,5,11,1.0,
+2020-2.jpg,2025-11-30T21:36:09.076949,69,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-2_annotated.jpg,52,4,12,1.0,
+2020-3.jpg,2025-11-30T21:36:12.234017,68,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-3_annotated.jpg,52,4,11,1.0,
+2020-4.jpg,2025-11-30T21:36:15.413613,53,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-4_annotated.jpg,42,4,6,,1.0
+2020-5.jpg,2025-11-30T21:36:18.356612,62,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-5_annotated.jpg,50,4,8,,
+2020-6.jpg,2025-11-30T21:36:20.971680,58,google_earth_tiled\Port_of_hongkong\2020\annotated\2020-6_annotated.jpg,46,4,8,,

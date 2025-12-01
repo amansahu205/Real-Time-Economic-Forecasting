@@ -1,0 +1,30 @@
+[
+  {
+    "image_name": "2021-1.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2021\\annotated\\2021-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:24.047553",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2021-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Salalah\\2021\\annotated\\2021-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:26.370863",
+    "total_detections": 1,
+    "class_counts": {
+      "harbor": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

@@ -1,0 +1,11 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_large-vehicle
+2021  - 3.jpg,2025-11-30T20:17:22.237521,14,google_earth\Port_of_LA\2021\annotated\2021  - 3_annotated.jpg,13,1.0
+2021 - 1.jpg,2025-11-30T20:17:22.854202,12,google_earth\Port_of_LA\2021\annotated\2021 - 1_annotated.jpg,12,
+2021 - 2.jpg,2025-11-30T20:17:23.412855,22,google_earth\Port_of_LA\2021\annotated\2021 - 2_annotated.jpg,22,
+2021  - 3.jpg,2025-11-30T20:18:34.605767,14,google_earth\Port_of_LA\2021\annotated\2021  - 3_annotated.jpg,13,1.0
+2021 - 1.jpg,2025-11-30T20:18:35.192452,12,google_earth\Port_of_LA\2021\annotated\2021 - 1_annotated.jpg,12,
+2021 - 2.jpg,2025-11-30T20:18:35.725698,22,google_earth\Port_of_LA\2021\annotated\2021 - 2_annotated.jpg,22,
+2021-1.jpg,2025-11-30T21:17:35.120729,12,google_earth\Port_of_LA\2021\annotated\2021-1_annotated.jpg,12,
+2021-2.jpg,2025-11-30T21:17:35.766591,22,google_earth\Port_of_LA\2021\annotated\2021-2_annotated.jpg,22,
+2021-3.jpg,2025-11-30T21:17:36.269600,14,google_earth\Port_of_LA\2021\annotated\2021-3_annotated.jpg,13,1.0
+2021-4.jpg,2025-11-30T21:17:36.826544,26,google_earth\Port_of_LA\2021\annotated\2021-4_annotated.jpg,26,

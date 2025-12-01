@@ -1,0 +1,3 @@
+image_name,timestamp,total_detections,annotated_path,count_car
+2024-2.jpg,2025-11-30T22:00:31.997599,2,retail_full\Mall_of_america\2024\annotated\2024-2_annotated.jpg,2.0
+2024-3.jpg,2025-11-30T22:00:36.568563,0,retail_full\Mall_of_america\2024\annotated\2024-3_annotated.jpg,

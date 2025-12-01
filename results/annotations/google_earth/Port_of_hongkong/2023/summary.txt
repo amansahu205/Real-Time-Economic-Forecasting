@@ -1,0 +1,14 @@
+Detection Summary - Port_of_hongkong/2023
+============================================================
+
+Total Images: 1
+Total Detections: 2
+Average Detections per Image: 2.00
+
+Detections by Class:
+----------------------------------------
+  harbor              :     1
+  ship                :     1
+
+============================================================
+Last Updated: 2025-11-30 21:18:01

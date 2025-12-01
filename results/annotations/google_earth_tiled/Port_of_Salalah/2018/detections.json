@@ -1,0 +1,103 @@
+[
+  {
+    "image_name": "2018-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2018\\annotated\\2018-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:00.246649",
+    "total_detections": 25,
+    "class_counts": {
+      "large-vehicle": 2,
+      "ship": 14,
+      "harbor": 3,
+      "storage-tank": 6
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-3.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2018\\annotated\\2018-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:02.382963",
+    "total_detections": 21,
+    "class_counts": {
+      "ship": 9,
+      "large-vehicle": 5,
+      "harbor": 1,
+      "storage-tank": 6
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-4.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2018\\annotated\\2018-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:04.508683",
+    "total_detections": 31,
+    "class_counts": {
+      "large-vehicle": 8,
+      "ship": 13,
+      "harbor": 2,
+      "small-vehicle": 1,
+      "storage-tank": 7
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-5.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2018\\annotated\\2018-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:06.728562",
+    "total_detections": 27,
+    "class_counts": {
+      "large-vehicle": 6,
+      "ship": 12,
+      "harbor": 2,
+      "storage-tank": 7
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-6.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2018\\annotated\\2018-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:08.932204",
+    "total_detections": 24,
+    "class_counts": {
+      "large-vehicle": 2,
+      "ship": 14,
+      "harbor": 3,
+      "storage-tank": 5
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

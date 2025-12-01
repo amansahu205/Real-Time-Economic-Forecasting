@@ -1,0 +1,108 @@
+[
+  {
+    "image_name": "2020-1.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:53.847587",
+    "total_detections": 18,
+    "class_counts": {
+      "ship": 14,
+      "harbor": 2,
+      "small-vehicle": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-2.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:54.554343",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 3,
+      "harbor": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-3.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:55.200469",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 3,
+      "harbor": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-3.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-4.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:55.931058",
+    "total_detections": 0,
+    "class_counts": {},
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-4.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-5.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:56.503993",
+    "total_detections": 19,
+    "class_counts": {
+      "ship": 16,
+      "harbor": 3
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-5.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2020-6.jpg",
+    "annotated_path": "google_earth\\Port_of_hongkong\\2020\\annotated\\2020-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:57.062569",
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 15,
+      "harbor": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_hongkong\\2020\\2020-6.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

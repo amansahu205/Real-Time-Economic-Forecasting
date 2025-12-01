@@ -1,0 +1,14 @@
+Detection Summary - Port_of_Salalah/2018
+============================================================
+
+Total Images: 5
+Total Detections: 28
+Average Detections per Image: 5.60
+
+Detections by Class:
+----------------------------------------
+  ship                :    23
+  harbor              :     5
+
+============================================================
+Last Updated: 2025-11-30 21:18:23

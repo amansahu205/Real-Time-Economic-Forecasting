@@ -1,0 +1,38 @@
+[
+  {
+    "image_name": "2019-1.jpg",
+    "annotated_path": "google_earth\\Port_of_Salalah\\2019\\annotated\\2019-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:24.459899",
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 4,
+      "harbor": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Salalah\\2019\\2019-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2019-3.jpg",
+    "annotated_path": "google_earth\\Port_of_Salalah\\2019\\annotated\\2019-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:24.985363",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 2,
+      "small-vehicle": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Salalah\\2019\\2019-3.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

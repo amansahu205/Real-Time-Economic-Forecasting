@@ -1,0 +1,17 @@
+filename,year,total_detections,class_counts,annotated_filename
+2017 - 1.jpg,2017,7,{'ship': 7},annotated_2017 - 1.jpg
+2017 - 2.jpg,2017,8,"{'ship': 7, 'harbor': 1}",annotated_2017 - 2.jpg
+2017 - 3.jpg,2017,6,"{'ship': 5, 'large-vehicle': 1}",annotated_2017 - 3.jpg
+2018 - 1.jpg,2018,6,"{'ship': 5, 'large-vehicle': 1}",annotated_2018 - 1.jpg
+2018 -2.jpg,2018,6,{'ship': 6},annotated_2018 -2.jpg
+2020 - 1.jpg,2020,3,{'ship': 3},annotated_2020 - 1.jpg
+2020 - 2.jpg,2020,15,{'ship': 15},annotated_2020 - 2.jpg
+2020 - 3.jpg,2020,17,{'ship': 17},annotated_2020 - 3.jpg
+2021  - 3.jpg,2021,14,"{'ship': 13, 'large-vehicle': 1}",annotated_2021  - 3.jpg
+2021 - 1.jpg,2021,12,{'ship': 12},annotated_2021 - 1.jpg
+2021 - 2.jpg,2021,22,{'ship': 22},annotated_2021 - 2.jpg
+2022 - 1.jpg,2022,10,{'ship': 10},annotated_2022 - 1.jpg
+2022 - 2.jpg,2022,24,{'ship': 24},annotated_2022 - 2.jpg
+2022 - 3.jpg,2022,23,{'ship': 23},annotated_2022 - 3.jpg
+2023 - 2.jpg,2023,15,{'ship': 15},annotated_2023 - 2.jpg
+2023 - 3.jpg,2023,15,{'ship': 15},annotated_2023 - 3.jpg

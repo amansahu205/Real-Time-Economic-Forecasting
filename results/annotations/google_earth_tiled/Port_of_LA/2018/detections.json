@@ -1,0 +1,60 @@
+[
+  {
+    "image_name": "2018-1.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2018\\annotated\\2018-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:09.714336",
+    "total_detections": 74,
+    "class_counts": {
+      "storage-tank": 16,
+      "ship": 39,
+      "harbor": 19
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2018\\annotated\\2018-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:11.884857",
+    "total_detections": 76,
+    "class_counts": {
+      "storage-tank": 15,
+      "ship": 40,
+      "harbor": 21
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2018-3.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_LA\\2018\\annotated\\2018-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:14.106096",
+    "total_detections": 80,
+    "class_counts": {
+      "storage-tank": 28,
+      "ship": 33,
+      "harbor": 18,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

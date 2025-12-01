@@ -1,0 +1,17 @@
+Detection Summary - Port_of_hongkong/2021
+============================================================
+
+Total Images: 3
+Total Detections: 200
+Average Detections per Image: 66.67
+
+Detections by Class:
+----------------------------------------
+  ship                :   153
+  harbor              :    34
+  storage-tank        :    10
+  small-vehicle       :     2
+  large-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:36:28

@@ -1,0 +1,14 @@
+Detection Summary - Mall_of_america/2022
+============================================================
+
+Total Images: 2
+Total Detections: 205
+Average Detections per Image: 102.50
+
+Detections by Class:
+----------------------------------------
+  car                 :   203
+  equipment           :     2
+
+============================================================
+Last Updated: 2025-11-30 22:00:24

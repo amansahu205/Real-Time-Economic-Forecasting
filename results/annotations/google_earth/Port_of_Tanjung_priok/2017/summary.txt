@@ -1,0 +1,14 @@
+Detection Summary - Port_of_Tanjung_priok/2017
+============================================================
+
+Total Images: 4
+Total Detections: 10
+Average Detections per Image: 2.50
+
+Detections by Class:
+----------------------------------------
+  ship                :     9
+  small-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:18:05

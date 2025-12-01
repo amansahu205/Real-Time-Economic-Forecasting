@@ -1,0 +1,61 @@
+[
+  {
+    "image_name": "2022-1.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_hongkong\\2022\\annotated\\2022-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:36:31.199868",
+    "total_detections": 50,
+    "class_counts": {
+      "storage-tank": 2,
+      "ship": 39,
+      "harbor": 8,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_hongkong\\2022\\annotated\\2022-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:36:34.304600",
+    "total_detections": 60,
+    "class_counts": {
+      "storage-tank": 6,
+      "ship": 43,
+      "harbor": 9,
+      "large-vehicle": 2
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-3.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_hongkong\\2022\\annotated\\2022-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:36:37.316064",
+    "total_detections": 60,
+    "class_counts": {
+      "ship": 48,
+      "storage-tank": 4,
+      "harbor": 8
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

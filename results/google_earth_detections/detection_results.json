@@ -1,0 +1,150 @@
+[
+  {
+    "filename": "2017 - 1.jpg",
+    "year": 2017,
+    "total_detections": 7,
+    "class_counts": {
+      "ship": 7
+    },
+    "annotated_filename": "annotated_2017 - 1.jpg"
+  },
+  {
+    "filename": "2017 - 2.jpg",
+    "year": 2017,
+    "total_detections": 8,
+    "class_counts": {
+      "ship": 7,
+      "harbor": 1
+    },
+    "annotated_filename": "annotated_2017 - 2.jpg"
+  },
+  {
+    "filename": "2017 - 3.jpg",
+    "year": 2017,
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 5,
+      "large-vehicle": 1
+    },
+    "annotated_filename": "annotated_2017 - 3.jpg"
+  },
+  {
+    "filename": "2018 - 1.jpg",
+    "year": 2018,
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 5,
+      "large-vehicle": 1
+    },
+    "annotated_filename": "annotated_2018 - 1.jpg"
+  },
+  {
+    "filename": "2018 -2.jpg",
+    "year": 2018,
+    "total_detections": 6,
+    "class_counts": {
+      "ship": 6
+    },
+    "annotated_filename": "annotated_2018 -2.jpg"
+  },
+  {
+    "filename": "2020 - 1.jpg",
+    "year": 2020,
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "annotated_filename": "annotated_2020 - 1.jpg"
+  },
+  {
+    "filename": "2020 - 2.jpg",
+    "year": 2020,
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "annotated_filename": "annotated_2020 - 2.jpg"
+  },
+  {
+    "filename": "2020 - 3.jpg",
+    "year": 2020,
+    "total_detections": 17,
+    "class_counts": {
+      "ship": 17
+    },
+    "annotated_filename": "annotated_2020 - 3.jpg"
+  },
+  {
+    "filename": "2021  - 3.jpg",
+    "year": 2021,
+    "total_detections": 14,
+    "class_counts": {
+      "ship": 13,
+      "large-vehicle": 1
+    },
+    "annotated_filename": "annotated_2021  - 3.jpg"
+  },
+  {
+    "filename": "2021 - 1.jpg",
+    "year": 2021,
+    "total_detections": 12,
+    "class_counts": {
+      "ship": 12
+    },
+    "annotated_filename": "annotated_2021 - 1.jpg"
+  },
+  {
+    "filename": "2021 - 2.jpg",
+    "year": 2021,
+    "total_detections": 22,
+    "class_counts": {
+      "ship": 22
+    },
+    "annotated_filename": "annotated_2021 - 2.jpg"
+  },
+  {
+    "filename": "2022 - 1.jpg",
+    "year": 2022,
+    "total_detections": 10,
+    "class_counts": {
+      "ship": 10
+    },
+    "annotated_filename": "annotated_2022 - 1.jpg"
+  },
+  {
+    "filename": "2022 - 2.jpg",
+    "year": 2022,
+    "total_detections": 24,
+    "class_counts": {
+      "ship": 24
+    },
+    "annotated_filename": "annotated_2022 - 2.jpg"
+  },
+  {
+    "filename": "2022 - 3.jpg",
+    "year": 2022,
+    "total_detections": 23,
+    "class_counts": {
+      "ship": 23
+    },
+    "annotated_filename": "annotated_2022 - 3.jpg"
+  },
+  {
+    "filename": "2023 - 2.jpg",
+    "year": 2023,
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "annotated_filename": "annotated_2023 - 2.jpg"
+  },
+  {
+    "filename": "2023 - 3.jpg",
+    "year": 2023,
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "annotated_filename": "annotated_2023 - 3.jpg"
+  }
+]

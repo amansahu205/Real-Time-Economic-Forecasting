@@ -1,0 +1,36 @@
+[
+  {
+    "image_name": "2022-1.jpg",
+    "annotated_path": "google_earth\\Port_of_Salalah\\2022\\annotated\\2022-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:28.913317",
+    "total_detections": 1,
+    "class_counts": {
+      "ship": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Salalah\\2022\\2022-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2022-2.jpg",
+    "annotated_path": "google_earth\\Port_of_Salalah\\2022\\annotated\\2022-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:18:29.404257",
+    "total_detections": 2,
+    "class_counts": {
+      "ship": 2
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_Salalah\\2022\\2022-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

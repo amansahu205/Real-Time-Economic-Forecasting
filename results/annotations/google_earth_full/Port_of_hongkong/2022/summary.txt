@@ -1,0 +1,15 @@
+Detection Summary - Port_of_hongkong/2022
+============================================================
+
+Total Images: 3
+Total Detections: 28
+Average Detections per Image: 9.33
+
+Detections by Class:
+----------------------------------------
+  ship                :    19
+  harbor              :     8
+  small-vehicle       :     1
+
+============================================================
+Last Updated: 2025-11-30 21:36:37

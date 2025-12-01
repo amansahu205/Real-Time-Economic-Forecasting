@@ -1,0 +1,6 @@
+image_name,timestamp,total_detections,annotated_path,count_harbor,count_ship,count_small-vehicle
+2019-1.jpg,2025-11-30T21:35:50.214567,5,google_earth_full\Port_of_hongkong\2019\annotated\2019-1_annotated.jpg,3,2,
+2019-2.jpg,2025-11-30T21:35:53.223466,20,google_earth_full\Port_of_hongkong\2019\annotated\2019-2_annotated.jpg,2,17,1.0
+2019-3.jpg,2025-11-30T21:35:56.240012,7,google_earth_full\Port_of_hongkong\2019\annotated\2019-3_annotated.jpg,1,4,2.0
+2019-4.jpg,2025-11-30T21:35:59.571886,48,google_earth_full\Port_of_hongkong\2019\annotated\2019-4_annotated.jpg,8,40,
+2019-5.jpg,2025-11-30T21:36:02.564992,80,google_earth_full\Port_of_hongkong\2019\annotated\2019-5_annotated.jpg,6,74,

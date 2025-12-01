@@ -1,0 +1,43 @@
+[
+  {
+    "image_name": "2022-1.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2022\\annotated\\2022-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:29.313100",
+    "total_detections": 26,
+    "class_counts": {
+      "storage-tank": 11,
+      "ship": 8,
+      "harbor": 4,
+      "large-vehicle": 3
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2022-2.jpg",
+    "annotated_path": "google_earth_tiled\\Port_of_Salalah\\2022\\annotated\\2022-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:38:31.514095",
+    "total_detections": 29,
+    "class_counts": {
+      "storage-tank": 11,
+      "small-vehicle": 1,
+      "ship": 10,
+      "large-vehicle": 5,
+      "harbor": 2
+    },
+    "metadata": {
+      "method": "tiled",
+      "tile_size": 1024,
+      "overlap": 128,
+      "num_tiles": 60,
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

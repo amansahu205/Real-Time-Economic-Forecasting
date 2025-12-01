@@ -1,0 +1,157 @@
+[
+  {
+    "image_name": "2021  - 3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021  - 3_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:22.237521",
+    "total_detections": 14,
+    "class_counts": {
+      "ship": 13,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021  - 3.jpg",
+      "migration_date": "2025-11-30T20:17:22.049498"
+    }
+  },
+  {
+    "image_name": "2021 - 1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021 - 1_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:22.854202",
+    "total_detections": 12,
+    "class_counts": {
+      "ship": 12
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021 - 1.jpg",
+      "migration_date": "2025-11-30T20:17:22.618005"
+    }
+  },
+  {
+    "image_name": "2021 - 2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021 - 2_annotated.jpg",
+    "timestamp": "2025-11-30T20:17:23.412855",
+    "total_detections": 22,
+    "class_counts": {
+      "ship": 22
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021 - 2.jpg",
+      "migration_date": "2025-11-30T20:17:23.198201"
+    }
+  },
+  {
+    "image_name": "2021  - 3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021  - 3_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:34.605767",
+    "total_detections": 14,
+    "class_counts": {
+      "ship": 13,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021  - 3.jpg",
+      "migration_date": "2025-11-30T20:18:34.416798"
+    }
+  },
+  {
+    "image_name": "2021 - 1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021 - 1_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:35.192452",
+    "total_detections": 12,
+    "class_counts": {
+      "ship": 12
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021 - 1.jpg",
+      "migration_date": "2025-11-30T20:18:34.962116"
+    }
+  },
+  {
+    "image_name": "2021 - 2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021 - 2_annotated.jpg",
+    "timestamp": "2025-11-30T20:18:35.725698",
+    "total_detections": 22,
+    "class_counts": {
+      "ship": 22
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "migrated_from": "results\\google_earth_detections\\annotated\\annotated_2021 - 2.jpg",
+      "migration_date": "2025-11-30T20:18:35.506650"
+    }
+  },
+  {
+    "image_name": "2021-1.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:35.120729",
+    "total_detections": 12,
+    "class_counts": {
+      "ship": 12
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2021\\2021-1.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2021-2.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:35.766591",
+    "total_detections": 22,
+    "class_counts": {
+      "ship": 22
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2021\\2021-2.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2021-3.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:36.269600",
+    "total_detections": 14,
+    "class_counts": {
+      "ship": 13,
+      "large-vehicle": 1
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2021\\2021-3.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  },
+  {
+    "image_name": "2021-4.jpg",
+    "annotated_path": "google_earth\\Port_of_LA\\2021\\annotated\\2021-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:17:36.826544",
+    "total_detections": 26,
+    "class_counts": {
+      "ship": 26
+    },
+    "metadata": {
+      "source": "Google Earth",
+      "original_path": "data\\raw\\satellite\\google_earth\\Port_of_LA\\2021\\2021-4.jpg",
+      "resolution": "~0.5m",
+      "model": "ports_dota_yolo11",
+      "conf_threshold": 0.25,
+      "iou_threshold": 0.45
+    }
+  }
+]

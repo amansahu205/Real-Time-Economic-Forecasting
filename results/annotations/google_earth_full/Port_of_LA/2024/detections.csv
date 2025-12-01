@@ -1,0 +1,6 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_small-vehicle
+2024-1.jpg,2025-11-30T21:35:07.679384,6,google_earth_full\Port_of_LA\2024\annotated\2024-1_annotated.jpg,5,1.0
+2024-2.jpg,2025-11-30T21:35:10.369572,4,google_earth_full\Port_of_LA\2024\annotated\2024-2_annotated.jpg,3,1.0
+2024-3.jpg,2025-11-30T21:35:13.032924,3,google_earth_full\Port_of_LA\2024\annotated\2024-3_annotated.jpg,3,
+2024-4.jpg,2025-11-30T21:35:15.841931,2,google_earth_full\Port_of_LA\2024\annotated\2024-4_annotated.jpg,1,1.0
+2024-5.jpg,2025-11-30T21:35:18.965505,2,google_earth_full\Port_of_LA\2024\annotated\2024-5_annotated.jpg,1,1.0

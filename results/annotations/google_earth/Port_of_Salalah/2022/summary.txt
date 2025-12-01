@@ -1,0 +1,13 @@
+Detection Summary - Port_of_Salalah/2022
+============================================================
+
+Total Images: 2
+Total Detections: 3
+Average Detections per Image: 1.50
+
+Detections by Class:
+----------------------------------------
+  ship                :     3
+
+============================================================
+Last Updated: 2025-11-30 21:18:29

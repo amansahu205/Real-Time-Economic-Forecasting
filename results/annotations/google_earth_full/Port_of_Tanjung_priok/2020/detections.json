@@ -1,0 +1,91 @@
+[
+  {
+    "image_name": "2020-1.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:19.360507",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 4,
+      "harbor": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2020-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:21.855530",
+    "total_detections": 3,
+    "class_counts": {
+      "ship": 3
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2020-3.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:24.306938",
+    "total_detections": 63,
+    "class_counts": {
+      "ship": 61,
+      "harbor": 2
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2020-4.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-4_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:26.471692",
+    "total_detections": 12,
+    "class_counts": {
+      "ship": 9,
+      "harbor": 3
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2020-5.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-5_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:28.894646",
+    "total_detections": 2,
+    "class_counts": {
+      "small-vehicle": 1,
+      "ship": 1
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2020-6.jpg",
+    "annotated_path": "google_earth_full\\Port_of_Tanjung_priok\\2020\\annotated\\2020-6_annotated.jpg",
+    "timestamp": "2025-11-30T21:37:31.418415",
+    "total_detections": 20,
+    "class_counts": {
+      "ship": 18,
+      "harbor": 2
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

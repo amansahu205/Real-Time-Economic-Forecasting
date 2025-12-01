@@ -1,0 +1,3 @@
+image_name,timestamp,total_detections,annotated_path,count_ship,count_harbor,count_storage-tank
+2023-1.jpg,2025-11-30T21:37:46.224226,36,google_earth_tiled\Port_of_Tanjung_priok\2023\annotated\2023-1_annotated.jpg,28,7,1
+2023-2.jpg,2025-11-30T21:37:48.622585,36,google_earth_tiled\Port_of_Tanjung_priok\2023\annotated\2023-2_annotated.jpg,28,7,1

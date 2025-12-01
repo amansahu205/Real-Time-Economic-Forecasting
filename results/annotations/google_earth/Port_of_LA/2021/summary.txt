@@ -1,0 +1,14 @@
+Detection Summary - Port_of_LA/2021
+============================================================
+
+Total Images: 10
+Total Detections: 170
+Average Detections per Image: 17.00
+
+Detections by Class:
+----------------------------------------
+  ship                :   167
+  large-vehicle       :     3
+
+============================================================
+Last Updated: 2025-11-30 21:17:36

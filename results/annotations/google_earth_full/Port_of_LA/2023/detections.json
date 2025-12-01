@@ -1,0 +1,44 @@
+[
+  {
+    "image_name": "2023-1.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2023\\annotated\\2023-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:34:59.815605",
+    "total_detections": 5,
+    "class_counts": {
+      "ship": 5
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2023-2.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2023\\annotated\\2023-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:35:02.403649",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  },
+  {
+    "image_name": "2023-3.jpg",
+    "annotated_path": "google_earth_full\\Port_of_LA\\2023\\annotated\\2023-3_annotated.jpg",
+    "timestamp": "2025-11-30T21:35:04.792077",
+    "total_detections": 15,
+    "class_counts": {
+      "ship": 15
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "ports_dota_yolo11"
+    }
+  }
+]

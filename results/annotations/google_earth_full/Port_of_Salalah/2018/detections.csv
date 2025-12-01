@@ -1,0 +1,6 @@
+image_name,timestamp,total_detections,annotated_path,count_harbor,count_ship
+2018-2.jpg,2025-11-30T21:38:00.072251,5,google_earth_full\Port_of_Salalah\2018\annotated\2018-2_annotated.jpg,2.0,3
+2018-3.jpg,2025-11-30T21:38:02.229603,6,google_earth_full\Port_of_Salalah\2018\annotated\2018-3_annotated.jpg,,6
+2018-4.jpg,2025-11-30T21:38:04.340337,5,google_earth_full\Port_of_Salalah\2018\annotated\2018-4_annotated.jpg,1.0,4
+2018-5.jpg,2025-11-30T21:38:06.577977,7,google_earth_full\Port_of_Salalah\2018\annotated\2018-5_annotated.jpg,,7
+2018-6.jpg,2025-11-30T21:38:08.756430,5,google_earth_full\Port_of_Salalah\2018\annotated\2018-6_annotated.jpg,2.0,3

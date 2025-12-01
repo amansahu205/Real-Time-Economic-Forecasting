@@ -1,0 +1,32 @@
+[
+  {
+    "image_name": "2017-1.jpg",
+    "annotated_path": "retail_full\\Mall_of_america\\2017\\annotated\\2017-1_annotated.jpg",
+    "timestamp": "2025-11-30T21:59:31.162638",
+    "total_detections": 13,
+    "class_counts": {
+      "car": 13
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "retail_yolo11",
+      "location_type": "retail_mall"
+    }
+  },
+  {
+    "image_name": "2017-2.jpg",
+    "annotated_path": "retail_full\\Mall_of_america\\2017\\annotated\\2017-2_annotated.jpg",
+    "timestamp": "2025-11-30T21:59:36.103646",
+    "total_detections": 17,
+    "class_counts": {
+      "car": 17
+    },
+    "metadata": {
+      "method": "full_image",
+      "resolution": "8192x4902",
+      "model": "retail_yolo11",
+      "location_type": "retail_mall"
+    }
+  }
+]

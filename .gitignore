@@ -1,0 +1,260 @@
+# Real-Time Economic Forecasting - .gitignore
+
+# ============================================
+# DATA FILES (DO NOT COMMIT - USE S3/DVC)
+# ============================================
+
+# Raw satellite images (large)
+data/raw/satellite/**/*.jpg
+data/raw/satellite/**/*.jpeg
+data/raw/satellite/**/*.png
+data/raw/satellite/**/*.tif
+data/raw/satellite/**/*.tiff
+data/raw/satellite/**/*.geojson
+data/raw/satellite/DOTA/
+data/raw/satellite/xview/
+data/raw/satellite/xview-economic-simple/
+
+# AIS data (very large ~10GB)
+data/raw/ais/**/*.zip
+data/raw/ais/**/*.csv
+
+# News data
+data/raw/news/
+
+# Other raw data
+data/raw/economic/
+data/raw/shipping/
+data/raw/trade/
+
+# Processed data (generated)
+data/processed/
+
+# Features (generated)
+data/features/
+
+# ============================================
+# MODEL WEIGHTS (LARGE FILES)
+# ============================================
+
+# PyTorch weights
+*.pt
+*.pth
+
+# Other model formats
+*.h5
+*.pkl
+*.onnx
+*.safetensors
+
+# Model checkpoints and weights
+data/models/**/weights/
+data/models/**/epoch*.pt
+data/models/checkpoints/
+data/models/forecasting/
+
+# Model training artifacts (large images)
+data/models/**/*.jpg
+data/models/**/*.png
+data/models/**/train_batch*.jpg
+data/models/**/val_batch*.jpg
+data/models/**/labels.jpg
+
+# Keep model metadata (small, useful)
+!data/models/**/args.yaml
+!data/models/**/results.csv
+
+# ============================================
+# RESULTS (GENERATED)
+# ============================================
+
+# Annotated images
+results/**/*.png
+results/**/*.jpg
+results/**/annotated/
+
+# Keep CSV results and READMEs
+!results/**/*.csv
+!results/**/*.md
+!results/**/README.md
+
+# ============================================
+# DOCUMENTATION (internal only)
+# ============================================
+docs/
+
+# ============================================
+# KEEP THESE FILES
+# ============================================
+
+# README files in data directories
+!data/README.md
+!data/**/README.md
+!data/raw/satellite/README.md
+!data/raw/satellite/google_earth/README.md
+!results/ANNOTATIONS_README.md
+!results/annotations/README.md
+!results/annotations/**/README.md
+
+# Inventory files (small)
+!data/raw/satellite/google_earth/inventory.csv
+
+# ============================================
+# PYTHON
+# ============================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# ============================================
+# ENVIRONMENT & SECRETS
+# ============================================
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+*.env
+
+# API keys and credentials
+**/credentials.json
+**/secrets.json
+**/*_key.txt
+**/*_secret.txt
+
+# AWS credentials
+.aws/
+aws_credentials.txt
+
+# ============================================
+# LOGS & TEMPORARY FILES
+# ============================================
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# ML & DATA SCIENCE
+# ============================================
+
+# TensorFlow
+*.ckpt
+*.ckpt.*
+checkpoint
+
+# PyTorch
+*.pt
+
+# Weights & Biases
+wandb/
+
+# MLflow
+mlruns/
+
+# DVC (Data Version Control)
+.dvc/
+*.dvc
+
+# ============================================
+# CLOUD & DEPLOYMENT
+# ============================================
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# CloudFormation
+*.template.yaml.bak
+
+# Docker
+*.dockerignore
+
+# ============================================
+# DOCUMENTATION
+# ============================================
+
+# Generated docs
+docs/_build/
+site/
+
+# ============================================
+# TESTING
+# ============================================
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# Pytest
+.pytest_cache/
+
+# ============================================
+# MISC
+# ============================================
+
+# Compressed files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Large downloads
+downloads/
+*.download

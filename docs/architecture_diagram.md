@@ -3,83 +3,33 @@
 ## Full System Architecture
 
 ```mermaid
-flowchart TB
-    subgraph DataSources["Data Sources"]
-        SAT[("Satellite Images<br/>Google Earth<br/>2017-2024")]
-        AIS[("AIS Maritime Data<br/>NOAA<br/>Ship Tracking")]
-    end
-
-    subgraph S3["Amazon S3 - Data Lake"]
-        RAW[("economic-forecast-raw")]
-        PROC[("economic-forecast-processed")]
-        MODELS[("economic-forecast-models")]
-    end
-
-    subgraph SF["AWS Step Functions"]
-        PIPELINE["economic-forecasting-pipeline"]
-    end
-
-    subgraph Lambda["AWS Lambda - 5 Functions"]
-        L1["1. satellite-data-ingestion<br/>Log uploads, extract metadata"]
-        L2["2. economic-forecast-detection<br/>YOLO object detection"]
-        L3["3. economic-forecast-fuse<br/>Combine satellite + AIS"]
-        L4["4. economic-forecast-predict<br/>ML forecasting"]
-        L5["5. ais-data-ingestion<br/>Process ship data"]
-    end
-
-    subgraph ML["Machine Learning Models"]
-        YOLO["YOLO11<br/>Ship & Vehicle Detection"]
-        RF["RandomForest<br/>Economic Forecasting"]
-    end
-
-    subgraph Monitor["Monitoring"]
-        CW["CloudWatch<br/>Logs & Metrics"]
-        SNS["SNS<br/>Alerts"]
-    end
-
-    subgraph Analytics["Analytics"]
-        GLUE["Glue Catalog"]
-        ATHENA["Athena SQL"]
-    end
-
-    subgraph SageMaker["AWS SageMaker"]
-        NB["Notebook Instance<br/>Model Training"]
-    end
-
-    %% Data ingestion
-    SAT --> RAW
-    AIS --> RAW
-
-    %% Pipeline flow
-    RAW --> PIPELINE
-    PIPELINE --> L1
-    L1 --> L2
-    L2 --> L3
-    L3 --> L4
-    L4 --> L5
-
-    %% ML connections
-    MODELS --> L2
-    L2 -.->|uses| YOLO
-    L4 -.->|uses| RF
-
-    %% Output storage
-    L2 --> PROC
+graph TD
+    SAT[(Satellite Images)] --> RAW[(S3 Raw)]
+    AIS[(AIS Data)] --> RAW
+    
+    RAW --> SF[Step Functions Pipeline]
+    
+    SF --> L1[Lambda: Ingest]
+    L1 --> L2[Lambda: Detection]
+    L2 --> L3[Lambda: Fuse]
+    L3 --> L4[Lambda: Predict]
+    L4 --> L5[Lambda: AIS]
+    
+    L2 --> PROC[(S3 Processed)]
     L3 --> PROC
     L4 --> PROC
     L5 --> PROC
-
-    %% Analytics
-    PROC --> GLUE
-    GLUE --> ATHENA
-
-    %% Monitoring
-    Lambda --> CW
-    PIPELINE --> CW
-    L4 --> SNS
-
-    %% SageMaker
-    NB --> MODELS
+    
+    MODELS[(S3 Models)] --> L2
+    MODELS --> L4
+    
+    PROC --> GLUE[Glue Catalog]
+    GLUE --> ATHENA[Athena]
+    
+    SF --> CW[CloudWatch]
+    L4 --> SNS[SNS Alerts]
+    
+    SM[SageMaker] --> MODELS
 ```
 
 ## Pipeline Execution Flow

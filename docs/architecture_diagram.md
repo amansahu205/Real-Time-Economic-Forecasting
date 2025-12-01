@@ -5,77 +5,81 @@
 ```mermaid
 flowchart TB
     subgraph DataSources["Data Sources"]
-        SAT[("Satellite Images<br/>Google Earth")]
-        AIS[("AIS Maritime Data<br/>NOAA")]
-        NEWS[("News Sentiment<br/>Bloomberg")]
+        SAT[("Satellite Images<br/>Google Earth<br/>2017-2024")]
+        AIS[("AIS Maritime Data<br/>NOAA<br/>Ship Tracking")]
     end
 
-    subgraph S3Storage["S3 Data Lake"]
-        RAW[("economic-forecast-raw<br/>Raw Data")]
-        PROC[("economic-forecast-processed<br/>Processed Data")]
-        MODELS[("economic-forecast-models<br/>ML Models")]
+    subgraph S3["Amazon S3 - Data Lake"]
+        RAW[("economic-forecast-raw")]
+        PROC[("economic-forecast-processed")]
+        MODELS[("economic-forecast-models")]
     end
 
-    subgraph Lambda["Lambda Functions"]
-        L1["satellite-data-ingestion"]
-        L2["economic-forecast-detection"]
-        L3["economic-forecast-fuse"]
-        L4["economic-forecast-predict"]
-        L5["ais-data-ingestion"]
-        L6["news-sentiment-ingestion"]
+    subgraph SF["AWS Step Functions"]
+        PIPELINE["economic-forecasting-pipeline"]
     end
 
-    subgraph StepFunctions["Step Functions Pipeline"]
-        SF["economic-forecasting-pipeline"]
+    subgraph Lambda["AWS Lambda - 5 Functions"]
+        L1["1. satellite-data-ingestion<br/>Log uploads, extract metadata"]
+        L2["2. economic-forecast-detection<br/>YOLO object detection"]
+        L3["3. economic-forecast-fuse<br/>Combine satellite + AIS"]
+        L4["4. economic-forecast-predict<br/>ML forecasting"]
+        L5["5. ais-data-ingestion<br/>Process ship data"]
     end
 
-    subgraph ML["Machine Learning"]
-        YOLO["YOLO11 Detection<br/>Ships & Vehicles"]
-        FORECAST["Forecasting Models<br/>RandomForest"]
+    subgraph ML["Machine Learning Models"]
+        YOLO["YOLO11<br/>Ship & Vehicle Detection"]
+        RF["RandomForest<br/>Economic Forecasting"]
     end
 
-    subgraph Monitoring["Monitoring & Alerts"]
-        CW["CloudWatch<br/>Dashboard & Logs"]
-        SNS["SNS<br/>Notifications"]
+    subgraph Monitor["Monitoring"]
+        CW["CloudWatch<br/>Logs & Metrics"]
+        SNS["SNS<br/>Alerts"]
     end
 
     subgraph Analytics["Analytics"]
         GLUE["Glue Catalog"]
-        ATHENA["Athena Queries"]
+        ATHENA["Athena SQL"]
     end
 
-    %% Data Flow
+    subgraph SageMaker["AWS SageMaker"]
+        NB["Notebook Instance<br/>Model Training"]
+    end
+
+    %% Data ingestion
     SAT --> RAW
     AIS --> RAW
-    NEWS --> RAW
 
-    RAW --> L1
-    RAW --> L5
-    RAW --> L6
-
-    L1 --> SF
-    SF --> L2
+    %% Pipeline flow
+    RAW --> PIPELINE
+    PIPELINE --> L1
+    L1 --> L2
     L2 --> L3
     L3 --> L4
     L4 --> L5
 
-    L2 -.-> YOLO
-    L4 -.-> FORECAST
+    %% ML connections
+    MODELS --> L2
+    L2 -.->|uses| YOLO
+    L4 -.->|uses| RF
 
+    %% Output storage
     L2 --> PROC
     L3 --> PROC
     L4 --> PROC
     L5 --> PROC
 
+    %% Analytics
     PROC --> GLUE
     GLUE --> ATHENA
 
-    SF --> CW
-    SF --> SNS
+    %% Monitoring
     Lambda --> CW
+    PIPELINE --> CW
+    L4 --> SNS
 
-    MODELS --> L2
-    MODELS --> L4
+    %% SageMaker
+    NB --> MODELS
 ```
 
 ## Pipeline Execution Flow

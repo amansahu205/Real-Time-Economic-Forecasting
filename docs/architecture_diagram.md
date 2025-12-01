@@ -88,8 +88,8 @@ sequenceDiagram
     L1-->>SF: Return metadata
 
     SF->>L2: Invoke
-    L2->>L2: Run YOLO detection
-    L2->>S3: Save detections
+    L2->>L2: Load pre-computed YOLO results
+    L2->>S3: Save detection summary
     L2-->>SF: Return detection_summary
 
     SF->>L3: Invoke with detection_summary

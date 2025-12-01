@@ -5,9 +5,9 @@
 ## 🎯 Overview
 
 This project predicts economic indicators (trade volume, retail activity) using:
-- **Satellite Imagery** - Object detection on ports and retail centers
+- **Satellite Imagery** - YOLO object detection on ports and retail centers
 - **AIS Maritime Data** - Ship tracking for trade flow analysis
-- **Machine Learning** - Time series forecasting
+- **Machine Learning** - Forecasting with Random Forest, Gradient Boosting
 
 ## 📁 Project Structure
 
@@ -15,40 +15,51 @@ This project predicts economic indicators (trade volume, retail activity) using:
 Real-Time-Economic-Forecasting/
 ├── src/                          # Core source code
 │   ├── config.py                 # Configuration settings
-│   ├── detection/                # Object detection modules
-│   │   ├── tiled_detector.py     # Tiled YOLO detection
-│   │   └── annotation_manager.py # Annotation management
+│   ├── aws_utils.py              # AWS/S3 utilities
+│   ├── detection/                # Object detection
+│   │   ├── tiled_detector.py     # Tiled YOLO for large images
+│   │   └── annotation_manager.py # Detection result management
 │   ├── features/                 # Feature extraction
-│   │   ├── satellite_features.py # Satellite feature extraction
-│   │   ├── ais_features.py       # AIS feature extraction
-│   │   └── feature_fusion.py     # Data fusion
-│   └── forecasting/              # Forecasting models
+│   │   ├── satellite_features.py # Ship/vehicle counts
+│   │   ├── ais_features.py       # Maritime traffic metrics
+│   │   └── feature_fusion.py     # Multi-source fusion
+│   └── forecasting/              # ML models
 │       └── model.py              # Economic forecaster
 │
 ├── scripts/                      # Pipeline scripts
 │   ├── run_pipeline.py           # End-to-end pipeline
-│   ├── aws_upload.py             # AWS S3 upload
-│   ├── process_ais_data.py       # AIS processing
-│   └── process_satellite_data.py # Satellite processing
+│   ├── aws_upload.py             # S3 data upload
+│   ├── process_ais_data.py       # AIS data processing
+│   ├── process_satellite_data.py # Satellite processing
+│   ├── download_ais_data.py      # AIS data download
+│   ├── download_ais_daily.py     # Daily AIS download
+│   ├── validate_ais_satellite.py # Data validation
+│   └── preprocessing/            # Dataset preparation
+│       ├── preprocess_dota_ports.py
+│       ├── create_retail_2class.py
+│       └── create_optimized_datasets.py
 │
-├── notebooks/                    # Analysis notebooks
-│   ├── Economic_Forecasting_Model.ipynb
-│   └── Port_LA_Analysis.ipynb
+├── notebooks/
+│   ├── demo/                     # 🎯 DEMO NOTEBOOKS (run these)
+│   │   ├── Demo_1_YOLO_Training.ipynb
+│   │   ├── Demo_2_Object_Detection.ipynb
+│   │   ├── Demo_3_AIS_Data.ipynb
+│   │   ├── Demo_4_Data_Fusion.ipynb
+│   │   ├── Demo_5_Forecasting.ipynb
+│   │   └── PRESENTATION_SCRIPTS.md
+│   └── full/                     # Full analysis notebooks
+│       ├── Port_LA_Analysis.ipynb
+│       ├── Economic_Forecasting_Model.ipynb
+│       └── News_Sentiment_Analysis.ipynb
 │
-├── data/                         # Data directory
-│   ├── raw/                      # Raw data
-│   │   ├── satellite/            # Satellite imagery
-│   │   └── ais/                  # AIS maritime data
-│   ├── processed/                # Processed data
-│   ├── features/                 # Extracted features
-│   └── models/                   # Trained models
+├── data/                         # Data (gitignored)
+│   ├── raw/satellite/            # Satellite imagery
+│   ├── raw/ais/                  # AIS maritime data
+│   ├── processed/                # Processed features
+│   └── models/                   # Trained YOLO models
 │
-├── results/                      # Results
-│   └── annotations/              # Detection results
-│
-└── docs/                         # Documentation
-    ├── AWS_ARCHITECTURE.md       # AWS infrastructure
-    └── PROCESSING_GUIDE.md       # Processing guide
+└── results/                      # Detection results
+    └── annotations/
 ```
 
 ## 🚀 Quick Start
@@ -137,12 +148,28 @@ See `docs/AWS_ARCHITECTURE.md` for details.
 | **Retail** | xView | vehicle, building |
 | **City** | xView | urban activity |
 
-## 📖 Documentation
+## 🎬 Demo Notebooks
 
-- `docs/AWS_ARCHITECTURE.md` - AWS infrastructure design
-- `docs/AWS_ARCHITECTURE_DETAILED.md` - Detailed specifications
-- `docs/PROCESSING_GUIDE.md` - Data processing guide
-- `docs/AIS_DATA_GUIDE.md` - AIS data documentation
+Run these in order for presentation:
+
+| Demo | Description | Time |
+|------|-------------|------|
+| **Demo 1** | YOLO Model Training | 3-4 min |
+| **Demo 2** | Ship/Car Detection | 5-6 min |
+| **Demo 3** | AIS Maritime Data | 3-4 min |
+| **Demo 4** | Data Fusion | 3-4 min |
+| **Demo 5** | Economic Forecasting | 5-6 min |
+
+See `notebooks/demo/PRESENTATION_SCRIPTS.md` for talking points.
+
+## 📊 Key Results
+
+| Metric | Finding |
+|--------|---------|
+| Port ships (2020 vs 2019) | +27% (supply chain backup) |
+| Mall cars (2020 vs 2019) | -63% (COVID lockdown) |
+| Trade forecast error | ~3% MAE |
+| Retail forecast error | ~2% MAE |
 
 ## 👥 Team
 

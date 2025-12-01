@@ -1,0 +1,103 @@
+{
+  "alarms": [
+    {
+      "alarm_name": "LambdaErrors-S3Trigger",
+      "alarm_description": "Alert when S3 trigger Lambda has errors",
+      "metric_name": "Errors",
+      "namespace": "AWS/Lambda",
+      "dimensions": [
+        {
+          "Name": "FunctionName",
+          "Value": "economic-forecast-s3-trigger"
+        }
+      ],
+      "statistic": "Sum",
+      "period": 300,
+      "evaluation_periods": 1,
+      "threshold": 1,
+      "comparison_operator": "GreaterThanOrEqualToThreshold",
+      "alarm_actions": ["arn:aws:sns:${AWS_REGION}:${AWS_ACCOUNT_ID}:economic-forecast-alerts"],
+      "treat_missing_data": "notBreaching"
+    },
+    {
+      "alarm_name": "LambdaErrors-AISProcessor",
+      "alarm_description": "Alert when AIS processor Lambda has errors",
+      "metric_name": "Errors",
+      "namespace": "AWS/Lambda",
+      "dimensions": [
+        {
+          "Name": "FunctionName",
+          "Value": "economic-forecast-process-ais"
+        }
+      ],
+      "statistic": "Sum",
+      "period": 300,
+      "evaluation_periods": 1,
+      "threshold": 1,
+      "comparison_operator": "GreaterThanOrEqualToThreshold",
+      "alarm_actions": ["arn:aws:sns:${AWS_REGION}:${AWS_ACCOUNT_ID}:economic-forecast-alerts"],
+      "treat_missing_data": "notBreaching"
+    },
+    {
+      "alarm_name": "StepFunctions-PipelineFailed",
+      "alarm_description": "Alert when forecasting pipeline fails",
+      "metric_name": "ExecutionsFailed",
+      "namespace": "AWS/States",
+      "dimensions": [
+        {
+          "Name": "StateMachineArn",
+          "Value": "arn:aws:states:${AWS_REGION}:${AWS_ACCOUNT_ID}:stateMachine:economic-forecasting-pipeline"
+        }
+      ],
+      "statistic": "Sum",
+      "period": 300,
+      "evaluation_periods": 1,
+      "threshold": 1,
+      "comparison_operator": "GreaterThanOrEqualToThreshold",
+      "alarm_actions": ["arn:aws:sns:${AWS_REGION}:${AWS_ACCOUNT_ID}:economic-forecast-alerts"],
+      "treat_missing_data": "notBreaching"
+    },
+    {
+      "alarm_name": "S3-HighStorageUsage",
+      "alarm_description": "Alert when S3 storage exceeds 50GB",
+      "metric_name": "BucketSizeBytes",
+      "namespace": "AWS/S3",
+      "dimensions": [
+        {
+          "Name": "BucketName",
+          "Value": "economic-forecast-raw"
+        },
+        {
+          "Name": "StorageType",
+          "Value": "StandardStorage"
+        }
+      ],
+      "statistic": "Average",
+      "period": 86400,
+      "evaluation_periods": 1,
+      "threshold": 53687091200,
+      "comparison_operator": "GreaterThanThreshold",
+      "alarm_actions": ["arn:aws:sns:${AWS_REGION}:${AWS_ACCOUNT_ID}:economic-forecast-alerts"],
+      "treat_missing_data": "notBreaching"
+    },
+    {
+      "alarm_name": "Lambda-HighDuration",
+      "alarm_description": "Alert when Lambda duration exceeds 5 minutes",
+      "metric_name": "Duration",
+      "namespace": "AWS/Lambda",
+      "dimensions": [
+        {
+          "Name": "FunctionName",
+          "Value": "economic-forecast-process-ais"
+        }
+      ],
+      "statistic": "Maximum",
+      "period": 300,
+      "evaluation_periods": 1,
+      "threshold": 300000,
+      "comparison_operator": "GreaterThanThreshold",
+      "alarm_actions": ["arn:aws:sns:${AWS_REGION}:${AWS_ACCOUNT_ID}:economic-forecast-alerts"],
+      "treat_missing_data": "notBreaching"
+    }
+  ]
+}

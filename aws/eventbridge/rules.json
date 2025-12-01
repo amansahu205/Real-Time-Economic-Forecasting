@@ -1,0 +1,53 @@
+{
+  "rules": [
+    {
+      "name": "daily-ais-download",
+      "description": "Download AIS data daily at 6 AM UTC",
+      "schedule_expression": "cron(0 6 * * ? *)",
+      "state": "ENABLED",
+      "targets": [
+        {
+          "id": "ais-download-lambda",
+          "arn": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-download-ais",
+          "input": {
+            "action": "download_daily",
+            "source": "marinecadastre"
+          }
+        }
+      ]
+    },
+    {
+      "name": "weekly-full-pipeline",
+      "description": "Run full forecasting pipeline every Sunday at midnight UTC",
+      "schedule_expression": "cron(0 0 ? * SUN *)",
+      "state": "ENABLED",
+      "targets": [
+        {
+          "id": "full-pipeline-stepfunction",
+          "arn": "arn:aws:states:${AWS_REGION}:${AWS_ACCOUNT_ID}:stateMachine:economic-forecasting-pipeline",
+          "role_arn": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/EventBridgeStepFunctionsRole",
+          "input": {
+            "action": "full_pipeline",
+            "triggered_by": "scheduled"
+          }
+        }
+      ]
+    },
+    {
+      "name": "monthly-model-retrain",
+      "description": "Trigger model retraining on 1st of each month",
+      "schedule_expression": "cron(0 2 1 * ? *)",
+      "state": "ENABLED",
+      "targets": [
+        {
+          "id": "retrain-sagemaker",
+          "arn": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-trigger-training",
+          "input": {
+            "action": "retrain",
+            "models": ["trade", "retail"]
+          }
+        }
+      ]
+    }
+  ]
+}

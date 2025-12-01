@@ -1,0 +1,214 @@
+{
+  "Comment": "Economic Forecasting Pipeline - Orchestrates data processing, detection, and forecasting",
+  "StartAt": "DetermineAction",
+  "States": {
+    "DetermineAction": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.file_type",
+          "StringEquals": "satellite_image",
+          "Next": "ProcessSatelliteImage"
+        },
+        {
+          "Variable": "$.file_type",
+          "StringEquals": "ais_data",
+          "Next": "ProcessAISData"
+        },
+        {
+          "Variable": "$.action",
+          "StringEquals": "full_pipeline",
+          "Next": "ParallelProcessing"
+        }
+      ],
+      "Default": "LogEvent"
+    },
+
+    "ProcessSatelliteImage": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sagemaker:createProcessingJob.sync",
+      "Parameters": {
+        "ProcessingJobName.$": "States.Format('detection-{}', $$.Execution.Name)",
+        "AppSpecification": {
+          "ImageUri": "${SAGEMAKER_IMAGE_URI}",
+          "ContainerEntrypoint": ["python", "/opt/ml/code/run_detection.py"]
+        },
+        "ProcessingInputs": [
+          {
+            "InputName": "input",
+            "S3Input": {
+              "S3Uri.$": "States.Format('s3://{}/{}', $.bucket, $.key)",
+              "LocalPath": "/opt/ml/processing/input",
+              "S3DataType": "S3Prefix",
+              "S3InputMode": "File"
+            }
+          }
+        ],
+        "ProcessingOutputConfig": {
+          "Outputs": [
+            {
+              "OutputName": "output",
+              "S3Output": {
+                "S3Uri": "s3://economic-forecast-processed/detections/",
+                "LocalPath": "/opt/ml/processing/output",
+                "S3UploadMode": "EndOfJob"
+              }
+            }
+          ]
+        },
+        "ProcessingResources": {
+          "ClusterConfig": {
+            "InstanceCount": 1,
+            "InstanceType": "ml.m5.xlarge",
+            "VolumeSizeInGB": 50
+          }
+        },
+        "RoleArn": "${SAGEMAKER_ROLE_ARN}"
+      },
+      "ResultPath": "$.detection_result",
+      "Next": "CheckFusionReady"
+    },
+
+    "ProcessAISData": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-process-ais",
+      "Parameters": {
+        "bucket.$": "$.bucket",
+        "key.$": "$.key"
+      },
+      "ResultPath": "$.ais_result",
+      "Next": "CheckFusionReady"
+    },
+
+    "ParallelProcessing": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "ProcessAllSatellite",
+          "States": {
+            "ProcessAllSatellite": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-batch-detection",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "ProcessAllAIS",
+          "States": {
+            "ProcessAllAIS": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-process-ais",
+              "Parameters": {
+                "process_all": true
+              },
+              "End": true
+            }
+          }
+        }
+      ],
+      "ResultPath": "$.parallel_results",
+      "Next": "FuseData"
+    },
+
+    "CheckFusionReady": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-check-fusion",
+      "ResultPath": "$.fusion_check",
+      "Next": "IsFusionReady"
+    },
+
+    "IsFusionReady": {
+      "Type": "Choice",
+      "Choices": [
+        {
+          "Variable": "$.fusion_check.ready",
+          "BooleanEquals": true,
+          "Next": "FuseData"
+        }
+      ],
+      "Default": "SendPartialNotification"
+    },
+
+    "FuseData": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-fuse-data",
+      "ResultPath": "$.fusion_result",
+      "Next": "RunForecasting"
+    },
+
+    "RunForecasting": {
+      "Type": "Parallel",
+      "Branches": [
+        {
+          "StartAt": "TradeForecast",
+          "States": {
+            "TradeForecast": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-predict",
+              "Parameters": {
+                "model_type": "trade",
+                "features_key.$": "$.fusion_result.output_key"
+              },
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "RetailForecast",
+          "States": {
+            "RetailForecast": {
+              "Type": "Task",
+              "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-predict",
+              "Parameters": {
+                "model_type": "retail",
+                "features_key.$": "$.fusion_result.output_key"
+              },
+              "End": true
+            }
+          }
+        }
+      ],
+      "ResultPath": "$.forecast_results",
+      "Next": "UpdateGlueCatalog"
+    },
+
+    "UpdateGlueCatalog": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::glue:startCrawler.sync",
+      "Parameters": {
+        "Name": "economic-forecast-crawler"
+      },
+      "ResultPath": "$.glue_result",
+      "Next": "SendSuccessNotification"
+    },
+
+    "SendSuccessNotification": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "${SNS_TOPIC_ARN}",
+        "Subject": "✅ Economic Forecasting Pipeline Complete",
+        "Message.$": "States.Format('Pipeline completed successfully!\\n\\nResults:\\n- Detection: {}\\n- Fusion: {}\\n- Forecasts: {}\\n\\nTime: {}', $.detection_result, $.fusion_result, $.forecast_results, $$.Execution.StartTime)"
+      },
+      "End": true
+    },
+
+    "SendPartialNotification": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::sns:publish",
+      "Parameters": {
+        "TopicArn": "${SNS_TOPIC_ARN}",
+        "Subject": "📊 Economic Forecast: Partial Processing Complete",
+        "Message": "Data processed. Waiting for more data before fusion."
+      },
+      "End": true
+    },
+
+    "LogEvent": {
+      "Type": "Task",
+      "Resource": "arn:aws:lambda:${AWS_REGION}:${AWS_ACCOUNT_ID}:function:economic-forecast-logger",
+      "End": true
+    }
+  }
+}

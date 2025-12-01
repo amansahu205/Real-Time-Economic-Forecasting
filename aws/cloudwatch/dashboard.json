@@ -1,0 +1,163 @@
+{
+  "dashboardName": "Economic-Forecast-Monitor",
+  "dashboardBody": {
+    "widgets": [
+      {
+        "type": "text",
+        "x": 0,
+        "y": 0,
+        "width": 24,
+        "height": 1,
+        "properties": {
+          "markdown": "# 🛰️ Economic Forecasting System - Monitoring Dashboard"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 1,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "S3 Bucket Size (GB)",
+          "metrics": [
+            ["AWS/S3", "BucketSizeBytes", "BucketName", "economic-forecast-raw", "StorageType", "StandardStorage", {"label": "Raw Data"}],
+            ["AWS/S3", "BucketSizeBytes", "BucketName", "economic-forecast-processed", "StorageType", "StandardStorage", {"label": "Processed"}],
+            ["AWS/S3", "BucketSizeBytes", "BucketName", "economic-forecast-models", "StorageType", "StandardStorage", {"label": "Models"}]
+          ],
+          "period": 86400,
+          "stat": "Average",
+          "region": "${AWS_REGION}",
+          "yAxis": {
+            "left": {
+              "label": "Bytes",
+              "showUnits": false
+            }
+          }
+        }
+      },
+      {
+        "type": "metric",
+        "x": 8,
+        "y": 1,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "Lambda Invocations",
+          "metrics": [
+            ["AWS/Lambda", "Invocations", "FunctionName", "economic-forecast-s3-trigger", {"label": "S3 Trigger"}],
+            ["AWS/Lambda", "Invocations", "FunctionName", "economic-forecast-process-ais", {"label": "AIS Processor"}],
+            ["AWS/Lambda", "Invocations", "FunctionName", "economic-forecast-predict", {"label": "Forecaster"}]
+          ],
+          "period": 3600,
+          "stat": "Sum",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 16,
+        "y": 1,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "Lambda Errors",
+          "metrics": [
+            ["AWS/Lambda", "Errors", "FunctionName", "economic-forecast-s3-trigger", {"label": "S3 Trigger", "color": "#d62728"}],
+            ["AWS/Lambda", "Errors", "FunctionName", "economic-forecast-process-ais", {"label": "AIS Processor", "color": "#ff7f0e"}],
+            ["AWS/Lambda", "Errors", "FunctionName", "economic-forecast-predict", {"label": "Forecaster", "color": "#2ca02c"}]
+          ],
+          "period": 3600,
+          "stat": "Sum",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 7,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "title": "Step Functions Executions",
+          "metrics": [
+            ["AWS/States", "ExecutionsStarted", "StateMachineArn", "arn:aws:states:${AWS_REGION}:${AWS_ACCOUNT_ID}:stateMachine:economic-forecasting-pipeline", {"label": "Started", "color": "#1f77b4"}],
+            ["AWS/States", "ExecutionsSucceeded", "StateMachineArn", "arn:aws:states:${AWS_REGION}:${AWS_ACCOUNT_ID}:stateMachine:economic-forecasting-pipeline", {"label": "Succeeded", "color": "#2ca02c"}],
+            ["AWS/States", "ExecutionsFailed", "StateMachineArn", "arn:aws:states:${AWS_REGION}:${AWS_ACCOUNT_ID}:stateMachine:economic-forecasting-pipeline", {"label": "Failed", "color": "#d62728"}]
+          ],
+          "period": 3600,
+          "stat": "Sum",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 12,
+        "y": 7,
+        "width": 12,
+        "height": 6,
+        "properties": {
+          "title": "SageMaker Processing Jobs",
+          "metrics": [
+            ["AWS/SageMaker", "ProcessingJobsSucceeded", {"label": "Succeeded", "color": "#2ca02c"}],
+            ["AWS/SageMaker", "ProcessingJobsFailed", {"label": "Failed", "color": "#d62728"}]
+          ],
+          "period": 86400,
+          "stat": "Sum",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 0,
+        "y": 13,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "Lambda Duration (ms)",
+          "metrics": [
+            ["AWS/Lambda", "Duration", "FunctionName", "economic-forecast-s3-trigger", {"label": "S3 Trigger"}],
+            ["AWS/Lambda", "Duration", "FunctionName", "economic-forecast-process-ais", {"label": "AIS Processor"}],
+            ["AWS/Lambda", "Duration", "FunctionName", "economic-forecast-predict", {"label": "Forecaster"}]
+          ],
+          "period": 3600,
+          "stat": "Average",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 8,
+        "y": 13,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "SNS Notifications Sent",
+          "metrics": [
+            ["AWS/SNS", "NumberOfMessagesPublished", "TopicName", "economic-forecast-alerts", {"label": "Alerts Sent"}],
+            ["AWS/SNS", "NumberOfNotificationsDelivered", "TopicName", "economic-forecast-alerts", {"label": "Delivered"}]
+          ],
+          "period": 86400,
+          "stat": "Sum",
+          "region": "${AWS_REGION}"
+        }
+      },
+      {
+        "type": "metric",
+        "x": 16,
+        "y": 13,
+        "width": 8,
+        "height": 6,
+        "properties": {
+          "title": "Glue Crawler Runs",
+          "metrics": [
+            ["AWS/Glue", "CrawlerRunTime", "CrawlerName", "economic-forecast-crawler", {"label": "Run Time (sec)"}]
+          ],
+          "period": 86400,
+          "stat": "Average",
+          "region": "${AWS_REGION}"
+        }
+      }
+    ]
+  }
+}

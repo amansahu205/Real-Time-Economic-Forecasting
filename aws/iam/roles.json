@@ -1,0 +1,292 @@
+{
+  "roles": [
+    {
+      "role_name": "economic-forecast-lambda-role",
+      "description": "IAM role for Lambda functions in the economic forecasting system",
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "lambda.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
+      "policies": [
+        {
+          "policy_name": "LambdaS3Access",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "s3:GetObject",
+                  "s3:PutObject",
+                  "s3:ListBucket",
+                  "s3:DeleteObject"
+                ],
+                "Resource": [
+                  "arn:aws:s3:::economic-forecast-raw",
+                  "arn:aws:s3:::economic-forecast-raw/*",
+                  "arn:aws:s3:::economic-forecast-processed",
+                  "arn:aws:s3:::economic-forecast-processed/*",
+                  "arn:aws:s3:::economic-forecast-models",
+                  "arn:aws:s3:::economic-forecast-models/*"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "LambdaSNSPublish",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "sns:Publish"
+                ],
+                "Resource": "arn:aws:sns:*:*:economic-forecast-alerts"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "LambdaStepFunctions",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "states:StartExecution"
+                ],
+                "Resource": "arn:aws:states:*:*:stateMachine:economic-forecasting-pipeline"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "LambdaCloudWatchLogs",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents"
+                ],
+                "Resource": "arn:aws:logs:*:*:*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "role_name": "economic-forecast-stepfunctions-role",
+      "description": "IAM role for Step Functions state machine",
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "states.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
+      "policies": [
+        {
+          "policy_name": "StepFunctionsLambdaInvoke",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "lambda:InvokeFunction"
+                ],
+                "Resource": "arn:aws:lambda:*:*:function:economic-forecast-*"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "StepFunctionsSageMaker",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "sagemaker:CreateProcessingJob",
+                  "sagemaker:DescribeProcessingJob",
+                  "sagemaker:StopProcessingJob"
+                ],
+                "Resource": "*"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "StepFunctionsSNS",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "sns:Publish"
+                ],
+                "Resource": "arn:aws:sns:*:*:economic-forecast-alerts"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "StepFunctionsGlue",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "glue:StartCrawler",
+                  "glue:GetCrawler"
+                ],
+                "Resource": "*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "role_name": "economic-forecast-eventbridge-role",
+      "description": "IAM role for EventBridge to trigger Step Functions",
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "events.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
+      "policies": [
+        {
+          "policy_name": "EventBridgeStepFunctions",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "states:StartExecution"
+                ],
+                "Resource": "arn:aws:states:*:*:stateMachine:economic-forecasting-pipeline"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "EventBridgeLambda",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "lambda:InvokeFunction"
+                ],
+                "Resource": "arn:aws:lambda:*:*:function:economic-forecast-*"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "role_name": "economic-forecast-glue-role",
+      "description": "IAM role for Glue crawler",
+      "trust_policy": {
+        "Version": "2012-10-17",
+        "Statement": [
+          {
+            "Effect": "Allow",
+            "Principal": {
+              "Service": "glue.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+          }
+        ]
+      },
+      "policies": [
+        {
+          "policy_name": "GlueS3Access",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "s3:GetObject",
+                  "s3:ListBucket"
+                ],
+                "Resource": [
+                  "arn:aws:s3:::economic-forecast-processed",
+                  "arn:aws:s3:::economic-forecast-processed/*"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "GlueCatalogAccess",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "glue:*"
+                ],
+                "Resource": "*"
+              }
+            ]
+          }
+        },
+        {
+          "policy_name": "GlueCloudWatchLogs",
+          "policy_document": {
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Action": [
+                  "logs:CreateLogGroup",
+                  "logs:CreateLogStream",
+                  "logs:PutLogEvents"
+                ],
+                "Resource": "arn:aws:logs:*:*:*"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

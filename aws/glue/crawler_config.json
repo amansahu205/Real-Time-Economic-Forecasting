@@ -1,0 +1,68 @@
+{
+  "crawler": {
+    "name": "economic-forecast-crawler",
+    "description": "Crawls processed economic forecast data for Athena queries",
+    "role": "arn:aws:iam::${AWS_ACCOUNT_ID}:role/economic-forecast-glue-role",
+    "database_name": "economic_forecast_db",
+    "targets": {
+      "s3_targets": [
+        {
+          "path": "s3://economic-forecast-processed/features/",
+          "exclusions": ["**/_temporary/**", "**/.spark-staging/**"]
+        },
+        {
+          "path": "s3://economic-forecast-processed/detections/",
+          "exclusions": ["**/_temporary/**"]
+        },
+        {
+          "path": "s3://economic-forecast-processed/predictions/",
+          "exclusions": ["**/_temporary/**"]
+        }
+      ]
+    },
+    "schema_change_policy": {
+      "update_behavior": "UPDATE_IN_DATABASE",
+      "delete_behavior": "LOG"
+    },
+    "recrawl_policy": {
+      "recrawl_behavior": "CRAWL_EVERYTHING"
+    },
+    "schedule": {
+      "schedule_expression": "cron(0 1 * * ? *)"
+    },
+    "configuration": {
+      "Version": 1.0,
+      "CrawlerOutput": {
+        "Partitions": {
+          "AddOrUpdateBehavior": "InheritFromTable"
+        }
+      },
+      "Grouping": {
+        "TableGroupingPolicy": "CombineCompatibleSchemas"
+      }
+    }
+  },
+  "database": {
+    "name": "economic_forecast_db",
+    "description": "Database for economic forecasting data - satellite detections, AIS features, and predictions",
+    "location_uri": "s3://economic-forecast-processed/"
+  },
+  "sample_athena_queries": [
+    {
+      "name": "Get Latest Predictions",
+      "query": "SELECT * FROM predictions ORDER BY timestamp DESC LIMIT 10;"
+    },
+    {
+      "name": "Ship Counts by Year",
+      "query": "SELECT year, SUM(ship_count) as total_ships, AVG(ships_per_image) as avg_ships_per_image FROM satellite_features GROUP BY year ORDER BY year;"
+    },
+    {
+      "name": "AIS Traffic Summary",
+      "query": "SELECT date, total_vessels, cargo_vessels, tanker_vessels FROM ais_features WHERE total_vessels > 0 ORDER BY date DESC LIMIT 30;"
+    },
+    {
+      "name": "Forecast Accuracy",
+      "query": "SELECT model_type, AVG(ABS(predicted_value - actual_value)) as mae, AVG(ABS(predicted_value - actual_value) / actual_value * 100) as mape FROM forecast_validation GROUP BY model_type;"
+    }
+  ]
+}

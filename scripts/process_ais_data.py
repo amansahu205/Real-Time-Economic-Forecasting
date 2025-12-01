@@ -21,15 +21,28 @@ warnings.filterwarnings('ignore')
 
 PROJECT_ROOT = Path(__file__).parent.parent
 AIS_DIR = PROJECT_ROOT / "data" / "raw" / "ais" / "noaa"
+AIS_DAILY_DIR = PROJECT_ROOT / "data" / "raw" / "ais" / "noaa_daily"
 PROCESSED_DIR = PROJECT_ROOT / "data" / "processed" / "ais"
 
-# Port of LA bounding box (expanded to capture approach areas)
+# Port bounding boxes
 PORT_LA_BOUNDS = {
     'min_lat': 33.65,
     'max_lat': 33.85,
     'min_lon': -118.35,
     'max_lon': -118.15
 }
+
+# Port of NY/NJ - Zone 18 data covers this area
+PORT_NY_BOUNDS = {
+    'min_lat': 40.45,
+    'max_lat': 40.75,
+    'min_lon': -74.25,
+    'max_lon': -73.85
+}
+
+# Default to NY since we have Zone 18 data
+DEFAULT_PORT_BOUNDS = PORT_NY_BOUNDS
+DEFAULT_PORT_NAME = "Port_of_NY"
 
 # AIS Vessel Type Codes
 VESSEL_TYPES = {
@@ -81,13 +94,17 @@ def classify_vessel(vessel_type_code):
         return 'unknown'
 
 
-def process_ais_file(zip_path, bounds=PORT_LA_BOUNDS):
+def process_ais_file(zip_path, bounds=None):
     """
     Process single AIS ZIP file
     
     Returns:
         DataFrame with filtered and processed AIS data
     """
+    # Use default bounds if not specified
+    if bounds is None:
+        bounds = DEFAULT_PORT_BOUNDS
+    
     # Extract ZIP
     csv_path = extract_zip(zip_path)
     if csv_path is None:
@@ -211,15 +228,23 @@ def calculate_economic_features(daily_df):
     return df
 
 
-def process_all_ais_data(year=None):
+def process_all_ais_data(year=None, port_name=None, bounds=None):
     """
     Process all downloaded AIS data
     
     Args:
         year: Process specific year only, or None for all years
+        port_name: Name of port (default: Port_of_NY for Zone 18 data)
+        bounds: Port bounding box (default: PORT_NY_BOUNDS)
     """
+    # Use defaults for Zone 18 data (East Coast)
+    if port_name is None:
+        port_name = DEFAULT_PORT_NAME
+    if bounds is None:
+        bounds = DEFAULT_PORT_BOUNDS
+    
     print("="*60)
-    print("🚢 PROCESSING AIS DATA FOR PORT OF LA")
+    print(f"🚢 PROCESSING AIS DATA FOR {port_name.upper().replace('_', ' ')}")
     print("="*60)
     
     # Find all ZIP files
@@ -237,7 +262,7 @@ def process_all_ais_data(year=None):
         print(f"   Please run: python scripts/download_ais_data.py")
         return None, None
     
-    print(f"\nPort Area: {PORT_LA_BOUNDS}")
+    print(f"\nPort Area: {bounds}")
     print()
     
     all_data = []
@@ -268,7 +293,7 @@ def process_all_ais_data(year=None):
     
     # Save raw data
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
-    output_file = PROCESSED_DIR / "Port_of_LA_ais_raw.parquet"
+    output_file = PROCESSED_DIR / f"{port_name}_ais_raw.parquet"
     full_data.to_parquet(output_file)
     print(f"\n✅ Saved raw data: {output_file}")
     
@@ -285,7 +310,7 @@ def process_all_ais_data(year=None):
     print(daily_metrics[['unique_ships', 'cargo_ships', 'tanker_ships']].describe())
     
     # Save daily metrics
-    output_file = PROCESSED_DIR / "Port_of_LA_ais_daily.csv"
+    output_file = PROCESSED_DIR / f"{port_name}_ais_daily.csv"
     daily_metrics.to_csv(output_file, index=False)
     print(f"\n✅ Saved daily metrics: {output_file}")
     
@@ -294,7 +319,7 @@ def process_all_ais_data(year=None):
     features = calculate_economic_features(daily_metrics)
     
     # Save features
-    output_file = PROCESSED_DIR / "Port_of_LA_ais_features.csv"
+    output_file = PROCESSED_DIR / f"{port_name}_ais_features.csv"
     features.to_csv(output_file, index=False)
     print(f"✅ Saved economic features: {output_file}")
     
@@ -302,9 +327,108 @@ def process_all_ais_data(year=None):
     print("✅ PROCESSING COMPLETE!")
     print(f"{'='*60}")
     print(f"\nOutput files:")
-    print(f"  - Raw data: data/processed/ais/Port_of_LA_ais_raw.parquet")
-    print(f"  - Daily metrics: data/processed/ais/Port_of_LA_ais_daily.csv")
-    print(f"  - Economic features: data/processed/ais/Port_of_LA_ais_features.csv")
+    print(f"  - Raw data: data/processed/ais/{port_name}_ais_raw.parquet")
+    print(f"  - Daily metrics: data/processed/ais/{port_name}_ais_daily.csv")
+    print(f"  - Economic features: data/processed/ais/{port_name}_ais_features.csv")
+    
+    return full_data, features
+
+
+def process_daily_ais_data(port_name="Port_of_LA", bounds=None):
+    """
+    Process daily AIS data files (2018+ format) for Port of LA
+    
+    Args:
+        port_name: Name of port (default: Port_of_LA)
+        bounds: Port bounding box (default: PORT_LA_BOUNDS)
+    """
+    if bounds is None:
+        bounds = PORT_LA_BOUNDS
+    
+    print("="*60)
+    print(f"🚢 PROCESSING DAILY AIS DATA FOR {port_name.upper().replace('_', ' ')}")
+    print("="*60)
+    
+    # Find all daily ZIP files
+    zip_files = sorted(AIS_DAILY_DIR.glob("**/*.zip"))
+    
+    print(f"\nFound {len(zip_files)} daily files to process")
+    
+    if len(zip_files) == 0:
+        print("\n❌ No daily AIS data found!")
+        print(f"   Please run: python scripts/download_ais_daily.py")
+        return None, None
+    
+    print(f"\nPort Area: {bounds}")
+    print()
+    
+    all_data = []
+    
+    # Process each file
+    for zip_file in tqdm(zip_files, desc="Processing files"):
+        df = process_ais_file(zip_file, bounds=bounds)
+        if df is not None and len(df) > 0:
+            all_data.append(df)
+            tqdm.write(f"   ✅ {zip_file.name}: {len(df):,} positions, {df['MMSI'].nunique()} ships")
+        else:
+            tqdm.write(f"   ⚠️  {zip_file.name}: No data in port area")
+    
+    if not all_data:
+        print("\n❌ No data found in port area!")
+        return None, None
+    
+    # Combine all data
+    print("\n📊 Combining all data...")
+    full_data = pd.concat(all_data, ignore_index=True)
+    
+    print(f"\n{'='*60}")
+    print("📊 RAW DATA SUMMARY")
+    print(f"{'='*60}")
+    print(f"Total AIS records: {len(full_data):,}")
+    print(f"Date range: {full_data['BaseDateTime'].min()} to {full_data['BaseDateTime'].max()}")
+    print(f"Unique ships: {full_data['MMSI'].nunique():,}")
+    print(f"\nVessel breakdown:")
+    print(full_data['vessel_category'].value_counts())
+    
+    # Save raw data
+    PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    output_file = PROCESSED_DIR / f"{port_name}_ais_raw.parquet"
+    full_data.to_parquet(output_file)
+    print(f"\n✅ Saved raw data: {output_file}")
+    
+    # Aggregate to daily metrics
+    print("\n📊 Aggregating to daily metrics...")
+    daily_metrics = aggregate_daily_metrics(full_data)
+    
+    print(f"\n{'='*60}")
+    print("📊 DAILY METRICS SUMMARY")
+    print(f"{'='*60}")
+    print(f"Total days: {len(daily_metrics)}")
+    print(f"Date range: {daily_metrics['date'].min()} to {daily_metrics['date'].max()}")
+    print(f"\nDaily statistics:")
+    print(daily_metrics[['unique_ships', 'cargo_ships', 'tanker_ships']].describe())
+    
+    # Save daily metrics
+    output_file = PROCESSED_DIR / f"{port_name}_ais_daily.csv"
+    daily_metrics.to_csv(output_file, index=False)
+    print(f"\n✅ Saved daily metrics: {output_file}")
+    
+    # Calculate economic features
+    print("\n📊 Calculating economic features...")
+    features = calculate_economic_features(daily_metrics)
+    
+    # Save features
+    output_file = PROCESSED_DIR / f"{port_name}_ais_features.csv"
+    features.to_csv(output_file, index=False)
+    print(f"✅ Saved economic features: {output_file}")
+    
+    print(f"\n{'='*60}")
+    print("✅ PROCESSING COMPLETE!")
+    print(f"{'='*60}")
+    print(f"\nOutput files:")
+    print(f"  - Raw data: data/processed/ais/{port_name}_ais_raw.parquet")
+    print(f"  - Daily metrics: data/processed/ais/{port_name}_ais_daily.csv")
+    print(f"  - Economic features: data/processed/ais/{port_name}_ais_features.csv")
     
     return full_data, features
 
@@ -312,10 +436,28 @@ def process_all_ais_data(year=None):
 def main():
     parser = argparse.ArgumentParser(description='Process NOAA AIS maritime data')
     parser.add_argument('--year', type=int, help='Process specific year only')
+    parser.add_argument('--source', type=str, choices=['monthly', 'daily'], default='monthly',
+                        help='Data source: monthly (Zone files) or daily (all US)')
+    parser.add_argument('--port', type=str, choices=['la', 'ny'], default='ny',
+                        help='Port to process: la (Los Angeles) or ny (New York)')
     
     args = parser.parse_args()
     
-    full_data, features = process_all_ais_data(year=args.year)
+    if args.source == 'daily':
+        # Process daily files (2018+) - supports Port of LA
+        if args.port == 'la':
+            full_data, features = process_daily_ais_data(
+                port_name="Port_of_LA",
+                bounds=PORT_LA_BOUNDS
+            )
+        else:
+            full_data, features = process_daily_ais_data(
+                port_name="Port_of_NY",
+                bounds=PORT_NY_BOUNDS
+            )
+    else:
+        # Process monthly Zone files (2017 only)
+        full_data, features = process_all_ais_data(year=args.year)
     
     if features is not None:
         print("\n📊 Sample economic features:")

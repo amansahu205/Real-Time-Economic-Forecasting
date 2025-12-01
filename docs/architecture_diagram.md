@@ -3,6 +3,42 @@
 ## Full System Architecture
 
 ```mermaid
+graph LR
+    subgraph Input
+        SAT[(Satellite)]
+        AIS[(AIS)]
+    end
+    
+    subgraph Storage
+        RAW[(S3 Raw)]
+        PROC[(S3 Processed)]
+    end
+    
+    subgraph Pipeline
+        SF[Step Functions]
+        L1[Ingest]
+        L2[Detect]
+        L3[Fuse]
+        L4[Predict]
+    end
+    
+    subgraph Output
+        CW[CloudWatch]
+        ATHENA[Athena]
+    end
+    
+    SAT --> RAW
+    AIS --> RAW
+    RAW --> SF
+    SF --> L1 --> L2 --> L3 --> L4
+    L4 --> PROC
+    PROC --> ATHENA
+    SF --> CW
+```
+
+## Detailed Architecture
+
+```mermaid
 graph TD
     SAT[(Satellite Images)] --> RAW[(S3 Raw)]
     AIS[(AIS Data)] --> RAW
